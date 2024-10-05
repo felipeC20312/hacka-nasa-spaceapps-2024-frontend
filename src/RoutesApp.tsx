@@ -4,10 +4,12 @@ import ErrorPage from './pages/ErrorPage';
 
 const RoutesApp = () => {
   return (
-    <Routes>
-      <Route path='/' element={<HomePage />} />
-      <Route path='*' element={<ErrorPage />} />
-    </Routes>
+    <div>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='*' element={<ErrorPage />} />
+      </Routes>
+    </div>
   );
 };
 
