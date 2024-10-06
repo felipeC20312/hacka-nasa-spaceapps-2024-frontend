@@ -12,7 +12,7 @@ const DeviceVerifier: React.FC<DeviceVerifierProps> = ({ children }) => {
 
   const checkDeviceType = () => {
     const windowSize = window.innerWidth;
-    if (windowSize <= 425) {
+    if (windowSize <= 475) {
       setDeviceType('Mobile');
     } else {
       setDeviceType('Desktop');

@@ -1,19 +1,21 @@
 interface CustomButtonProps {
   width: string;
   label: string;
-  border: string;
+  border?: string;
   bgColor: string;
 }
 
 const CustomButton: React.FC<CustomButtonProps> = ({
   width,
   label,
-  border = null,
+  border = '',
   bgColor,
 }) => {
   return (
     <button
-      className={`flex-shrink-0 w-${width} aspect-[1/1] bg-[${bgColor}] ${border} border-[#282828] rounded-full`}>
+      className={`flex-shrink-0 w-${width} h-${width} bg-[${bgColor}] ${border} ${
+        border ? 'border-[#282828]' : ''
+      } rounded-full`}>
       {label}
     </button>
   );
