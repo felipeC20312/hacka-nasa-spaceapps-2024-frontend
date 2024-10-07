@@ -1,10 +1,22 @@
-const CustomCard = () => {
+interface CustomCardProps {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const CustomCard: React.FC<CustomCardProps> = ({
+  icon,
+  title,
+  description,
+}) => {
   return (
-    <div className='flex w-full min-h-[95px] p-[12px] bg-[#282828] rounded-[28px] text-white'>
-      <div>H</div>
+    <div className='flex w-full min-h-[95px] p-[12px] gap-[12px] bg-[#282828] rounded-[28px] text-white'>
+      <div className='flex items-center justify-center shrink-0 w-[73px] aspect-square bg-[#242424] rounded-[24px]'>
+        {icon}
+      </div>
       <div className='flex flex-col'>
-        <h2>Sharknado!</h2>
-        <h3>Tufão com ataque de tubarão iminente corra para as montanhas!!</h3>
+        <h2>{title}</h2>
+        <h3>{description}</h3>
       </div>
     </div>
   );

@@ -1,0 +1,169 @@
+{
+  "estado": "Goiânia",
+  "plantacao": "Soja",
+  "dias": [
+    {
+      "icon": "Sem",
+      "data": "06.out.",
+      "status": "Perfeito",
+      "duracao": "06.out. a 16.out.",
+      "dicas": [
+        {
+          "titulo": "Irrigação mínima necessária",
+          "icone": "",
+          "descricao": "Chuva leve, pouca necessidade de irrigação adicional."
+        },
+        {
+          "titulo": "Irrigação mínima necessária",
+          "icone": "",
+          "descricao": "Chuva leve, pouca necessidade de irrigação adicional."
+        },
+        {
+          "titulo": "Irrigação mínima necessária",
+          "icone": "",
+          "descricao": "Chuva leve, pouca necessidade de irrigação adicional."
+        }
+      ]
+    },
+    {
+      "icon": "Sem",
+      "data": "07.out.",
+      "status": "Perfeito",
+      "duracao": "06.out. a 16.out.",
+      "dicas": [
+        {
+          "titulo": "Irrigação necessária",
+          "icone": "",
+          "descricao": "Sem chuva prevista, aumentar irrigação."
+        }
+      ]
+    },
+    {
+      "icon": "Sem",
+      "data": "08.out.",
+      "status": "Perfeito",
+      "duracao": "06.out. a 16.out.",
+      "dicas": [
+        {
+          "titulo": "Irrigação necessária",
+          "icone": "",
+          "descricao": "Sem chuva prevista, garantir irrigação contínua."
+        }
+      ]
+    },
+    {
+      "icon": "Sem",
+      "data": "09.out.",
+      "status": "Chuva intensa",
+      "duracao": "06.out. a 16.out.",
+      "dicas": [
+        {
+          "titulo": "Preparar drenagem",
+          "icone": "",
+          "descricao": "Chuva intensa, risco de acúmulo de água nas plantações."
+        },
+        {
+          "titulo": "Monitorar solos",
+          "icone": "",
+          "descricao": "Atenção à drenagem, chuva moderada pode afetar o solo."
+        },
+        {
+          "titulo": "Proteção contra tempestade",
+          "icone": "",
+          "descricao": "Fortes chuvas, proteger as plantações contra danos."
+        }
+      ]
+    },
+    {
+      "icon": "Sem",
+      "data": "10.out.",
+      "status": "Chuva intensa",
+      "duracao": "06.out. a 16.out.",
+      "dicas": [
+        {
+          "titulo": "Monitorar solos",
+          "icone": "",
+          "descricao": "Atenção à drenagem, chuva moderada pode afetar o solo."
+        }
+      ]
+    },
+    {
+      "icon": "Sem",
+      "data": "11.out.",
+      "status": "Tempestade",
+      "duracao": "06.out. a 16.out.",
+      "dicas": [
+        {
+          "titulo": "Proteção contra tempestade",
+          "icone": "",
+          "descricao": "Fortes chuvas, proteger as plantações contra danos."
+        }
+      ]
+    },
+    {
+      "icon": "Sem",
+      "data": "12.out.",
+      "status": "Perfeito",
+      "duracao": "06.out. a 16.out.",
+      "dicas": [
+        {
+          "titulo": "Sem necessidade de irrigação",
+          "icone": "",
+          "descricao": "Sem chuva, considerar rega artificial leve."
+        }
+      ]
+    },
+    {
+      "icon": "Sem",
+      "data": "13.out.",
+      "status": "Perfeito",
+      "duracao": "06.out. a 16.out.",
+      "dicas": [
+        {
+          "titulo": "Irrigação leve",
+          "icone": "",
+          "descricao": "Sem previsão de chuva, ajustar irrigação."
+        }
+      ]
+    },
+    {
+      "icon": "Sem",
+      "data": "14.out.",
+      "status": "Perfeito",
+      "duracao": "06.out. a 16.out.",
+      "dicas": [
+        {
+          "titulo": "Irrigação necessária",
+          "icone": "",
+          "descricao": "Sem chuva, necessário monitorar o solo."
+        }
+      ]
+    },
+    {
+      "icon": "Sem",
+      "data": "15.out.",
+      "status": "Perfeito",
+      "duracao": "06.out. a 16.out.",
+      "dicas": [
+        {
+          "titulo": "Monitorar umidade do solo",
+          "icone": "",
+          "descricao": "Sem chuva, verificar se há necessidade de irrigação."
+        }
+      ]
+    },
+    {
+      "icon": "Sem",
+      "data": "16.out.",
+      "status": "Perfeito",
+      "duracao": "06.out. a 16.out.",
+      "dicas": [
+        {
+          "titulo": "Irrigação leve",
+          "icone": "",
+          "descricao": "Clima estável, pouca necessidade de irrigação adicional."
+        }
+      ]
+    }
+  ]
+}

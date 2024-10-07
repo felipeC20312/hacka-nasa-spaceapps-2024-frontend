@@ -35,8 +35,9 @@ const DeviceVerifier: React.FC<DeviceVerifierProps> = ({ children }) => {
         <div className='flex flex-col w-full h-dvh p-5 items-center justify-center gap-5 bg-[#1F1F1F]'>
           <h2 className='text-[#DCF730] font-bold'>Ops!</h2>
           <p className='text-white text-center'>
-            Nossa solução ainda não está disponivel para o seu modelo de
-            dispositivo :(
+            Ops! It seems that our solution is not avaliable for larger screns
+            devices like yours, please acess our solution via cellphone or whith
+            a device with smaller screnn. Sorry for the inconvenience :(
           </p>
           <l-grid size='150' speed='1.5' color='#DCF730'></l-grid>
         </div>
