@@ -1,0 +1,18 @@
+{
+  "translation": {
+    "fieldLabels": {
+      "selectCountry": "Selecione um país",
+      "selectState": "Selecione um estado",
+      "Props": "Selecione as culturas que você trabalha"
+    },
+    "buttons": {
+      "continue": "Continuar",
+      "filter": "Filtrar",
+      "addProp": "Adicionar Cultura"
+    },
+    "imagesAltText": {
+      "eventImg": "Imagem relacionada ao evento climático",
+      "orusLogo": "Logo do aplicativo web orus AI"
+    }
+  }
+}

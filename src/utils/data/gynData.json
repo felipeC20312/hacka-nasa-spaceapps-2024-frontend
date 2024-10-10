@@ -3,7 +3,7 @@
   "plantacao": "Soja",
   "dias": [
     {
-      "icon": "Sem",
+      "icon": "CloudRain",
       "data": "06.out.",
       "status": "Perfeito",
       "duracao": "06.out. a 16.out.",
@@ -59,17 +59,17 @@
       "dicas": [
         {
           "titulo": "Preparar drenagem",
-          "icone": "",
+          "icone": "Tornado",
           "descricao": "Chuva intensa, risco de acúmulo de água nas plantações."
         },
         {
           "titulo": "Monitorar solos",
-          "icone": "",
+          "icone": "Sprout",
           "descricao": "Atenção à drenagem, chuva moderada pode afetar o solo."
         },
         {
           "titulo": "Proteção contra tempestade",
-          "icone": "",
+          "icone": "CalendarCheck2",
           "descricao": "Fortes chuvas, proteger as plantações contra danos."
         }
       ]

@@ -3,7 +3,10 @@ import CustomCard from '@/components/CustomCard';
 import CustomSlider from '@/components/CustomSlider/CustomSlider';
 import { useEffect, useState } from 'react';
 
-import dataJson from '@/utils/gynData.json';
+import { images } from '@/assets/utils/getImgs';
+import dataJson from '@/utils/data/gynData.json';
+import { useTranslation } from 'react-i18next';
+import CustomIconsLucid from '@/components/CustomIconsLucid';
 
 interface Dica {
   titulo: string;
@@ -26,39 +29,38 @@ interface AgriculturaPrevisao {
 }
 
 const HomePage = () => {
+  const { t } = useTranslation();
+
   const [data, setData] = useState<AgriculturaPrevisao | undefined>(undefined);
   const [diaEspecifico, setDiaEspecifico] = useState<Dia | undefined>(
     undefined
   );
 
-  // Função para pegar dados do JSON
   const getData = () => {
     setData(dataJson);
   };
 
-  // Efeito para carregar os dados
   useEffect(() => {
     getData();
   }, []);
 
-  // Definir um dia específico (por exemplo, "09.out.")
   useEffect(() => {
     if (data) {
       const dia = data.dias.find((dia) => dia.data === '09.out.');
-      setDiaEspecifico(dia); // Setar o dia específico no estado
+      setDiaEspecifico(dia);
     }
   }, [data]);
 
   return (
     <div className='flex flex-col min-h-dvh max-h-fit box-border p-3 items-center bg-[#1F1F1F]'>
       <img
-        src='../../src/assets/clounds.png'
-        alt='Description'
-        className='absolute top-0 left-0 w-full h-auto object-cover bg-[#1f1f1f]'
-        style={{ mixBlendMode: 'color-dodge' }}
+        src={images.img_event_cloudy}
+        alt={t('imagesAltText.eventImg')}
+        className='absolute z-[0] top-0 left-0 w-full h-auto object-cover opacity-[28%]'
       />
-      <div className='flex w-full box-border gap-3 mt-[30px]'>
-        <img src='../../src/assets/Group.svg' alt='' />
+      <div className='absolute w-full h-[130px] top-[170px] bg-gradient-to-b from-transparent to-[#1F1F1F]'></div>
+      <div className='flex w-full z-[1] box-border gap-3 mt-[30px]'>
+        <img src={images.img_logo} alt={t('imagesAltText.orusLogo')} />
         <div className='flex w-full h-fit pl-[40px] py-[10px] bg-[#00000020] border-2 border-[#282828] rounded-full'>
           <div>
             <p className='text-[20px] text-[#A5A5A5]'>{data?.estado}</p>
@@ -72,17 +74,16 @@ const HomePage = () => {
       </div>
       <div>
         <p className='font-semibold mt-[24px] text-[#A5A5A5] text-[24px]'>
-          Chuvas extremas
+          {t('fieldLabels.selectCountry')}
         </p>
       </div>
-      <p className='text-white text-[36px] font-medium'>de 13 set. a 28 out.</p>
+      <p className='text-white text-[36px] font-medium'>{t('')}</p>
 
-      {/* Renderizando as dicas do dia específico */}
       <div className='flex flex-col mt-[40px] gap-[16px] text-white'>
         {diaEspecifico ? (
           diaEspecifico.dicas.map((dica) => (
             <CustomCard
-              icon='H'
+              icon={<CustomIconsLucid iconName={dica.icone} color='#DCF730' />}
               title={dica.titulo}
               description={dica.descricao}
             />
@@ -95,10 +96,10 @@ const HomePage = () => {
       <div className='flex w-full min-h-[95px] mt-[16px] p-[12px] gap-[12px] bg-[#282828] rounded-[28px] text-white'>
         <div className='flex flex-col gap-[20px]'>
           <div className='flex gap-4 w-full justify-start items-center'>
-            <div className='flex justify-center items-center w-fit h-fit p-[5px] border-2 border-[#ffff] rounded-full'>
+            <div className='flex justify-center items-center w-fit h-fit p-[5px] border-2 border-[#333333] rounded-full'>
               <img
-                src='../../src/assets/Group.svg'
-                alt=''
+                src={images.img_logo}
+                alt={t('imagesAltText.orusLogo')}
                 className='w-[30px] h-[30px]'
               />
             </div>

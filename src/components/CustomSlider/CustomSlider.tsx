@@ -6,9 +6,11 @@ import 'swiper/css';
 import './CustomSlider.css';
 import { useEffect, useState } from 'react';
 
-import dayJsonList from '@/utils/daylist.json';
+import dayJsonList from '@/utils/data/daylist.json';
+import CustomIconsLucid from '../CustomIconsLucid';
 
 interface Day {
+  icon: string;
   date: string;
 }
 
@@ -21,9 +23,9 @@ interface CustomSliderProps {
   icon?: string;
 }
 
-const CustomSlider: React.FC<CustomSliderProps> = ({ day, icon }) => {
+const CustomSlider: React.FC<CustomSliderProps> = ({}) => {
   const [dayData, setDays] = useState<DataList>();
-  const [dayDataCount, setDayDataCount] = useState<number>();
+  // const [dayDataCount, setDayDataCount] = useState<number>();
 
   const handleSetDays = () => {
     setDays(dayJsonList);
@@ -52,9 +54,9 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ day, icon }) => {
               className='flex items-center justify-center'>
               {({ isActive }) => (
                 <DayTag
-                  day={dayItem.date} // Passando o dia específico baseado no índice
-                  icon={icon || ''} // Pode passar um ícone se quiser
-                  activeFlag={isActive} // Define se o slide está ativo
+                  day={dayItem.date}
+                  icon={<CustomIconsLucid iconName={dayItem.icon} />}
+                  activeFlag={isActive}
                 />
               )}
             </SwiperSlide>
