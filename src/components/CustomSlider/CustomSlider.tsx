@@ -41,7 +41,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({}) => {
         slidesPerView={3}
         centeredSlides={true}
         loop={true}
-        spaceBetween={0}
+        spaceBetween={16}
         pagination={{
           clickable: true,
         }}

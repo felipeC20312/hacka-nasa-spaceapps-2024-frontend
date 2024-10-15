@@ -83,6 +83,7 @@ const HomePage = () => {
         {diaEspecifico ? (
           diaEspecifico.dicas.map((dica) => (
             <CustomCard
+              key={dica.titulo}
               icon={<CustomIconsLucid iconName={dica.icone} color='#DCF730' />}
               title={dica.titulo}
               description={dica.descricao}
