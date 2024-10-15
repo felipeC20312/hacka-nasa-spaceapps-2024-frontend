@@ -7,6 +7,8 @@ import { images } from '@/assets/utils/getImgs';
 import dataJson from '@/utils/data/gynData.json';
 import { useTranslation } from 'react-i18next';
 import CustomIconsLucid from '@/components/CustomIconsLucid';
+import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
 
 interface Tips {
   title: string;
@@ -41,6 +43,39 @@ const HomePage = () => {
     setData(dataJson);
   };
 
+  const handleRedirect = () => {
+    window.open(
+      'https://demonasa-10cafe.streamlit.app/',
+      '_blank',
+      'noopener,noreferrer'
+    );
+  };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      toast.success(
+        <div className='flex flex-col rounded-[25px] p-3 gap-3 bg-[#282828] border-2 border-[#333333]'>
+          <p className='text-[20px] text-center text-white font-semibold'>
+            This is a Demo Aplication
+          </p>
+          <p className='text-[18px] text-center text-white'>
+            This aplication is a demo to showcase our moder interface, to make
+            real requests for our IA model please click on the button try it now
+          </p>
+          <button
+            onClick={handleRedirect}
+            className='p-3 rounded-[15px] text-[18px] text-[#282828] font-normal shadow-[0_0_15px_5px_rgba(220,247,48,0.5)] hover:shadow-[0_0_25px_10px_rgba(220,247,48,0.8)] overflow-hidden bg-gradient-to-r from-[#DCF730] via-[#b8e600] to-[#DCF730]'>
+            Try Orus IA now!
+          </button>
+        </div>,
+        { duration: 7000, unstyled: true }
+      );
+    }, 2000); // Espera 2 segundos antes de exibir o toaster
+
+    // Cleanup do timeout para evitar problemas se o componente for desmontado antes do timeout.
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     getData();
   }, []);
@@ -59,7 +94,7 @@ const HomePage = () => {
         alt={t('imagesAltText.eventImg')}
         className='absolute z-[0] top-0 left-0 w-full h-auto object-cover opacity-[28%]'
       />
-      <div className='absolute w-full h-[130px] top-[170px] bg-gradient-to-b from-transparent to-[#1F1F1F]'></div>
+      <div className='absolute w-full h-[130px] top-[170px] bg-gradient-to-b from-transparent to-[#1f1f1f]'></div>
       <div className='flex w-full z-[1] box-border gap-3 mt-[30px]'>
         <img src={images.img_logo} alt={t('imagesAltText.orusLogo')} />
         <div className='flex w-full h-fit pl-[40px] py-[10px] bg-[#00000020] border-2 border-[#282828] rounded-full'>
@@ -83,7 +118,7 @@ const HomePage = () => {
       </div>
       <p className='text-white text-[36px] font-medium'>{t('')}</p>
 
-      <div className='flex flex-col mt-[40px] gap-[16px] text-white'>
+      <div className='flex flex-col w-full mt-[40px] gap-[16px] text-white'>
         {diaEspecifico ? (
           diaEspecifico.tips.map((tips) => (
             <CustomCard

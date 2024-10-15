@@ -3,7 +3,7 @@
   "crop": "Soybean",
   "days": [
     {
-      "icon": "CloudRain",
+      "icon": "CloudHail",
       "date": "06.Oct.",
       "status": "Light Rain",
       "duration": "06.Oct. to 07.Oct.",
@@ -26,7 +26,7 @@
       ]
     },
     {
-      "icon": "CloudHail",
+      "icon": "ThermometerSun",
       "date": "07.Oct.",
       "status": "Dry Weather",
       "duration": "07.Oct. to 08.Oct.",
@@ -74,7 +74,7 @@
     {
       "icon": "Tornado",
       "date": "09.Oct.",
-      "status": "Heavy Rain",
+      "status": "Typhoon",
       "duration": "09.Oct. to 10.Oct.",
       "tips": [
         {
@@ -97,28 +97,28 @@
     {
       "icon": "Flame",
       "date": "10.Oct.",
-      "status": "Moderate Rain",
+      "status": "Forest Fires",
       "duration": "10.Oct. to 11.Oct.",
       "tips": [
         {
-          "title": "Monitor Soil Drainage",
-          "icon": "CloudDrizzle",
-          "description": "Ensure drainage is working, as moderate rain may affect the soil."
+          "title": "Check Soil Moisture",
+          "icon": "Droplet",
+          "description": "No rain expected, check if irrigation is needed."
         },
         {
-          "title": "Prevent Flooding",
-          "icon": "Umbrella",
-          "description": "Check drainage channels to avoid water accumulation."
+          "title": "Monitor Climate Changes",
+          "icon": "Sun",
+          "description": "Check for any sudden weather changes."
         },
         {
-          "title": "Check Irrigation Systems",
-          "icon": "Wrench",
-          "description": "Inspect the irrigation system after the rain."
+          "title": "Watch for Pests",
+          "icon": "Bug",
+          "description": "Pests may appear due to dry conditions."
         }
       ]
     },
     {
-      "icon": "CloudHail",
+      "icon": "CloudLightning",
       "date": "11.Oct.",
       "status": "Stormy Weather",
       "duration": "11.Oct. to 12.Oct.",
