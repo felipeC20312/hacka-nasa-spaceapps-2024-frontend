@@ -1,18 +1,31 @@
 {
   "translation": {
-    "fieldLabels": {
-      "selectCountry": "Selecione um país",
-      "selectState": "Selecione um estado",
-      "Props": "Selecione as culturas que você trabalha"
-    },
     "buttons": {
-      "continue": "Continuar",
-      "filter": "Filtrar",
-      "addProp": "Adicionar Cultura"
+      "continue": "Continue",
+      "filter": "Filter",
+      "addProp": "Add Crop"
     },
     "imagesAltText": {
       "eventImg": "Imagem relacionada ao evento climático",
-      "orusLogo": "Logo do aplicativo web orus AI"
+      "orusLogo": "Web app Orus AI logo"
+    },
+    "firstPage": {
+      "title": "Ready to smart farming?",
+      "subtitle": "Set your data crop:",
+      "textInputs": {
+        "country": {
+          "title": "Country",
+          "subtitle": "Input a Country"
+        },
+        "state": {
+          "title": "State",
+          "subtitle": "Input a State"
+        },
+        "crops": {
+          "title": "Agricultural Crops",
+          "subtitle": "Select the crops you work with"
+        }
+      }
     }
   }
 }

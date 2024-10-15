@@ -35,6 +35,7 @@ const HomePage = () => {
   const [diaEspecifico, setDiaEspecifico] = useState<Dia | undefined>(
     undefined
   );
+  const [focusDay, setFocusDay] = useState<string>('');
 
   const getData = () => {
     setData(dataJson);
@@ -46,10 +47,10 @@ const HomePage = () => {
 
   useEffect(() => {
     if (data) {
-      const dia = data.dias.find((dia) => dia.data === '09.out.');
+      const dia = data.dias.find((dia) => dia.data === focusDay);
       setDiaEspecifico(dia);
     }
-  }, [data]);
+  }, [focusDay]);
 
   return (
     <div className='flex flex-col min-h-dvh max-h-fit box-border p-3 items-center bg-[#1F1F1F]'>
@@ -70,11 +71,14 @@ const HomePage = () => {
         </div>
       </div>
       <div className='flex w-full h-fit mt-[170px] text-white'>
-        <CustomSlider />
+        <CustomSlider setFocusDay={setFocusDay} />
       </div>
-      <div>
-        <p className='font-semibold mt-[24px] text-[#A5A5A5] text-[24px]'>
-          {t('fieldLabels.selectCountry')}
+      <div className='flex flex-col'>
+        <p className='mt-[24px] text-[#A5A5A5] text-[24px] text-center font-normal'>
+          {diaEspecifico?.status}
+        </p>
+        <p className='text-[35px] text-white text-center font-light'>
+          {diaEspecifico?.duracao}
         </p>
       </div>
       <p className='text-white text-[36px] font-medium'>{t('')}</p>
@@ -111,29 +115,27 @@ const HomePage = () => {
           </div>
           <div className='flex flex-col gap-2 text-[#A5A5A5]'>
             <p>
-              Com as mudanças climáticas atuais, o cultivo de soja enfrenta
-              novos desafios que exigem cuidados especiais para garantir
-              produtividade e sustentabilidade. A soja, uma das culturas mais
-              importantes do mundo, é particularmente sensível a variações
-              climáticas, como mudanças nos padrões de chuva, temperaturas
-              extremas e aumento da incidência de pragas.
+              Due to current climate change, soybean cultivation faces new
+              challenges that require special care to ensure productivity and
+              sustainability. Soybeans, one of the most important crops
+              globally, are particularly sensitive to climate variations such as
+              shifts in rainfall patterns, extreme temperatures, and increased
+              pest incidence.
             </p>
             <p>
-              1. Monitoramento climático contínuo: É essencial que os
-              agricultores estejam atentos às previsões meteorológicas e
-              utilizem tecnologias de monitoramento climático para ajustar as
-              práticas agrícolas em tempo real. Sistemas de irrigação eficientes
-              podem ajudar a compensar a irregularidade das chuvas, enquanto o
-              uso de sensores de umidade do solo pode evitar tanto o estresse
-              hídrico quanto o excesso de água.
+              1. Continuous Climate Monitoring: Farmers must stay alert to
+              weather forecasts and utilize climate monitoring technologies to
+              adjust farming practices in real-time. Efficient irrigation
+              systems can help offset irregular rainfall, while soil moisture
+              sensors can prevent both water stress and overwatering.
             </p>
             <p>
-              2. Escolha de variedades resistentes: Uma das principais
-              estratégias para mitigar os impactos climáticos é selecionar
-              variedades de soja que sejam mais resistentes ao calor, à seca e
-              às doenças associadas ao clima. Pesquisadores e empresas de
-              biotecnologia têm desenvolvido sementes mais adaptadas a essas
-              condições extremas, garantindo maior resiliência da produção.
+              2. Selection of Resistant Varieties: A key strategy to mitigate
+              climate impacts is to choose soybean varieties that are more
+              resistant to heat, drought, and climate-related diseases.
+              Researchers and biotech companies are developing seeds better
+              adapted to extreme conditions, ensuring greater resilience in
+              production.
             </p>
           </div>
         </div>

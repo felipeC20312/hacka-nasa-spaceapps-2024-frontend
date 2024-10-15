@@ -4,31 +4,41 @@ import DayTag from '../DayTag';
 
 import 'swiper/css';
 import './CustomSlider.css';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import dayJsonList from '@/utils/data/daylist.json';
+import dataJson from '@/utils/data/gynData.json';
 import CustomIconsLucid from '../CustomIconsLucid';
+
+interface Dica {
+  titulo: string;
+  icone: string;
+  descricao: string;
+}
 
 interface Day {
   icon: string;
-  date: string;
-}
-
-interface DataList {
-  days: Day[];
+  data: string;
+  status: string;
+  duracao: string;
+  dicas: Dica[];
 }
 
 interface CustomSliderProps {
-  day?: string;
-  icon?: string;
+  setFocusDay: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const CustomSlider: React.FC<CustomSliderProps> = ({}) => {
-  const [dayData, setDays] = useState<DataList>();
-  // const [dayDataCount, setDayDataCount] = useState<number>();
+const CustomSlider: React.FC<CustomSliderProps> = ({ setFocusDay }) => {
+  const [dayData, setDays] = useState<Day[]>([]);
 
   const handleSetDays = () => {
-    setDays(dayJsonList);
+    setDays(dataJson.dias);
+  };
+
+  const handleSlideChange = (index: number) => {
+    const activeDay = dayData[index];
+    if (activeDay) {
+      setFocusDay(activeDay.data);
+    }
   };
 
   useEffect(() => {
@@ -46,15 +56,16 @@ const CustomSlider: React.FC<CustomSliderProps> = ({}) => {
           clickable: true,
         }}
         modules={[Pagination]}
-        className='w-[100%] h-[100%]'>
+        className='w-[100%] h-[100%]'
+        onSlideChange={(swiper) => handleSlideChange(swiper.realIndex)}>
         {dayData &&
-          dayData.days.map((dayItem, index) => (
+          dayData.map((dayItem, index) => (
             <SwiperSlide
               key={index}
               className='flex items-center justify-center'>
               {({ isActive }) => (
                 <DayTag
-                  day={dayItem.date}
+                  day={dayItem.data}
                   icon={<CustomIconsLucid iconName={dayItem.icon} />}
                   activeFlag={isActive}
                 />

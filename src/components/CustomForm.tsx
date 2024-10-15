@@ -11,6 +11,7 @@ import {
   FormLabel,
   FormMessage,
 } from './ui/form';
+import { t } from 'i18next';
 
 const formSchema = z.object({
   country: z.string().min(2).max(50),
@@ -48,12 +49,12 @@ const CustomForm = () => {
             return (
               <FormItem>
                 <FormLabel className='text-[12px] text-white font-light'>
-                  Country
+                  {t('firstPage.textInputs.country.title')}
                 </FormLabel>
                 <FormControl>
                   <Input
                     {...field}
-                    placeholder='Country'
+                    placeholder={t('firstPage.textInputs.country.subtitle')}
                     className='bg-[#303030] border-[#757D86] ring-offset-[#DCF730] text-white  placeholder:text-[12px] placeholder:text-[#C8D0D8] placeholder:font-light'
                   />
                 </FormControl>
@@ -69,12 +70,12 @@ const CustomForm = () => {
             return (
               <FormItem>
                 <FormLabel className='text-[12px] text-white font-light'>
-                  State
+                  {t('firstPage.textInputs.state.title')}
                 </FormLabel>
                 <FormControl>
                   <Input
                     {...field}
-                    placeholder='State'
+                    placeholder={t('firstPage.textInputs.state.subtitle')}
                     className='bg-[#303030] border-[#757D86] ring-offset-[#DCF730] text-white  placeholder:text-[12px] placeholder:text-[#C8D0D8] placeholder:font-light'
                   />
                 </FormControl>
@@ -90,12 +91,12 @@ const CustomForm = () => {
             return (
               <FormItem>
                 <FormLabel className='text-[12px] text-white font-light'>
-                  Props
+                  {t('firstPage.textInputs.crops.title')}
                 </FormLabel>
                 <FormControl>
                   <Input
                     {...field}
-                    placeholder='Props'
+                    placeholder={t('firstPage.textInputs.crops.subtitle')}
                     className='bg-[#303030] border-[#757D86] ring-offset-[#DCF730] text-white  placeholder:text-[12px] placeholder:text-[#C8D0D8] placeholder:font-light'
                   />
                 </FormControl>
@@ -107,7 +108,7 @@ const CustomForm = () => {
         <button
           type='submit'
           className='flex w-full h-[45px] mt-[50px] justify-center items-center rounded-[12px] bg-[#DCF730] text-[18px] text-[#282828] font-normal'>
-          Submit
+          {t('buttons.continue', 'Submit')}
         </button>
       </form>
     </Form>

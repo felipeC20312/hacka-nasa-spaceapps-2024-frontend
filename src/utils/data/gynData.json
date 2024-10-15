@@ -10,158 +10,248 @@
       "dicas": [
         {
           "titulo": "Irrigação mínima necessária",
-          "icone": "",
+          "icone": "Droplet",
           "descricao": "Chuva leve, pouca necessidade de irrigação adicional."
         },
         {
-          "titulo": "Irrigação mínima necessária",
-          "icone": "",
-          "descricao": "Chuva leve, pouca necessidade de irrigação adicional."
+          "titulo": "Verificar o solo",
+          "icone": "Sprout",
+          "descricao": "Monitorar a umidade do solo para evitar excesso de água."
         },
         {
-          "titulo": "Irrigação mínima necessária",
-          "icone": "",
-          "descricao": "Chuva leve, pouca necessidade de irrigação adicional."
+          "titulo": "Previsão de clima estável",
+          "icone": "Sun",
+          "descricao": "O clima está favorável, sem mudanças bruscas."
         }
       ]
     },
     {
-      "icon": "Sem",
+      "icon": "CloudHail",
       "data": "07.out.",
       "status": "Perfeito",
       "duracao": "06.out. a 16.out.",
       "dicas": [
         {
-          "titulo": "Irrigação necessária",
-          "icone": "",
+          "titulo": "Aumento da irrigação",
+          "icone": "Droplet",
           "descricao": "Sem chuva prevista, aumentar irrigação."
+        },
+        {
+          "titulo": "Verificar condições de vento",
+          "icone": "Wind",
+          "descricao": "Monitorar ventos fortes que podem afetar a plantação."
+        },
+        {
+          "titulo": "Manutenção das plantas",
+          "icone": "Wrench",
+          "descricao": "Hora de realizar a manutenção do sistema de irrigação."
         }
       ]
     },
     {
-      "icon": "Sem",
+      "icon": "Bug",
       "data": "08.out.",
       "status": "Perfeito",
       "duracao": "06.out. a 16.out.",
       "dicas": [
         {
-          "titulo": "Irrigação necessária",
-          "icone": "",
-          "descricao": "Sem chuva prevista, garantir irrigação contínua."
+          "titulo": "Monitoramento de pragas",
+          "icone": "Bug",
+          "descricao": "Monitorar pragas que podem aparecer com o tempo seco."
+        },
+        {
+          "titulo": "Verificar irrigação",
+          "icone": "Droplet",
+          "descricao": "Garantir irrigação contínua para manter a umidade do solo."
+        },
+        {
+          "titulo": "Proteção contra pragas",
+          "icone": "Shield",
+          "descricao": "Aplicar proteção contra pragas nas plantas jovens."
         }
       ]
     },
     {
-      "icon": "Sem",
+      "icon": "Tornado",
       "data": "09.out.",
       "status": "Chuva intensa",
       "duracao": "06.out. a 16.out.",
       "dicas": [
         {
-          "titulo": "Preparar drenagem",
+          "titulo": "Possible typhoon",
           "icone": "Tornado",
-          "descricao": "Chuva intensa, risco de acúmulo de água nas plantações."
+          "descricao": "Possible typhoon will occur on October 9th. Protect your plantation!"
         },
         {
-          "titulo": "Monitorar solos",
+          "titulo": "Caution",
           "icone": "Sprout",
-          "descricao": "Atenção à drenagem, chuva moderada pode afetar o solo."
+          "descricao": "Heavy rains can destroy the sprouts, check them."
         },
         {
-          "titulo": "Proteção contra tempestade",
+          "titulo": "15 Days until the end of the rains",
           "icone": "CalendarCheck2",
-          "descricao": "Fortes chuvas, proteger as plantações contra danos."
+          "descricao": "With the end of the heavy rains, you will be able to do amazing things."
         }
       ]
     },
     {
-      "icon": "Sem",
+      "icon": "Flame",
       "data": "10.out.",
       "status": "Chuva intensa",
       "duracao": "06.out. a 16.out.",
       "dicas": [
         {
           "titulo": "Monitorar solos",
-          "icone": "",
+          "icone": "CloudDrizzle",
           "descricao": "Atenção à drenagem, chuva moderada pode afetar o solo."
+        },
+        {
+          "titulo": "Evitar alagamento",
+          "icone": "Umbrella",
+          "descricao": "Certifique-se de que os canais de drenagem estão desobstruídos."
+        },
+        {
+          "titulo": "Checar sistemas de irrigação",
+          "icone": "Wrench",
+          "descricao": "Após a chuva, verificar a funcionalidade do sistema de irrigação."
         }
       ]
     },
     {
-      "icon": "Sem",
+      "icon": "CloudHail",
       "data": "11.out.",
       "status": "Tempestade",
       "duracao": "06.out. a 16.out.",
       "dicas": [
         {
           "titulo": "Proteção contra tempestade",
-          "icone": "",
+          "icone": "ShieldAlert",
           "descricao": "Fortes chuvas, proteger as plantações contra danos."
+        },
+        {
+          "titulo": "Verificar o vento",
+          "icone": "Wind",
+          "descricao": "Verificar a força dos ventos para prevenir danos."
+        },
+        {
+          "titulo": "Checar drenagem",
+          "icone": "Droplet",
+          "descricao": "Garantir que o sistema de drenagem está funcionando corretamente."
         }
       ]
     },
     {
-      "icon": "Sem",
+      "icon": "CloudHail",
       "data": "12.out.",
       "status": "Perfeito",
       "duracao": "06.out. a 16.out.",
       "dicas": [
         {
           "titulo": "Sem necessidade de irrigação",
-          "icone": "",
+          "icone": "CloudRain",
           "descricao": "Sem chuva, considerar rega artificial leve."
+        },
+        {
+          "titulo": "Clima estável",
+          "icone": "Sun",
+          "descricao": "Clima estável, sem necessidade de grandes intervenções."
+        },
+        {
+          "titulo": "Verificação do solo",
+          "icone": "Sprout",
+          "descricao": "Monitorar a umidade do solo para garantir boas condições."
         }
       ]
     },
     {
-      "icon": "Sem",
+      "icon": "Tornado",
       "data": "13.out.",
       "status": "Perfeito",
       "duracao": "06.out. a 16.out.",
       "dicas": [
         {
           "titulo": "Irrigação leve",
-          "icone": "",
+          "icone": "Droplet",
           "descricao": "Sem previsão de chuva, ajustar irrigação."
+        },
+        {
+          "titulo": "Monitorar temperatura",
+          "icone": "Thermometer",
+          "descricao": "Verificar se a temperatura está adequada para a plantação."
+        },
+        {
+          "titulo": "Clima estável",
+          "icone": "Sun",
+          "descricao": "Sem chuvas, mas o clima está favorável."
         }
       ]
     },
     {
-      "icon": "Sem",
+      "icon": "Bug",
       "data": "14.out.",
       "status": "Perfeito",
       "duracao": "06.out. a 16.out.",
       "dicas": [
         {
           "titulo": "Irrigação necessária",
-          "icone": "",
+          "icone": "Droplet",
           "descricao": "Sem chuva, necessário monitorar o solo."
+        },
+        {
+          "titulo": "Proteção contra pragas",
+          "icone": "Bug",
+          "descricao": "Aplicar controle de pragas para evitar danos às plantas."
+        },
+        {
+          "titulo": "Monitoramento contínuo",
+          "icone": "Eye",
+          "descricao": "Manter o monitoramento diário da plantação."
         }
       ]
     },
     {
-      "icon": "Sem",
+      "icon": "Flame",
       "data": "15.out.",
       "status": "Perfeito",
       "duracao": "06.out. a 16.out.",
       "dicas": [
         {
           "titulo": "Monitorar umidade do solo",
-          "icone": "",
+          "icone": "Droplet",
           "descricao": "Sem chuva, verificar se há necessidade de irrigação."
+        },
+        {
+          "titulo": "Monitorar clima",
+          "icone": "Sun",
+          "descricao": "Verificar possíveis mudanças climáticas."
+        },
+        {
+          "titulo": "Verificar pragas",
+          "icone": "Bug",
+          "descricao": "Observar sinais de pragas devido à falta de chuva."
         }
       ]
     },
     {
-      "icon": "Sem",
+      "icon": "Bug",
       "data": "16.out.",
       "status": "Perfeito",
       "duracao": "06.out. a 16.out.",
       "dicas": [
         {
           "titulo": "Irrigação leve",
-          "icone": "",
+          "icone": "Droplet",
           "descricao": "Clima estável, pouca necessidade de irrigação adicional."
+        },
+        {
+          "titulo": "Monitorar solos",
+          "icone": "Sprout",
+          "descricao": "Verificar a umidade do solo para garantir boas condições."
+        },
+        {
+          "titulo": "Manutenção preventiva",
+          "icone": "Wrench",
+          "descricao": "Realizar manutenção do sistema de irrigação para evitar problemas."
         }
       ]
     }
