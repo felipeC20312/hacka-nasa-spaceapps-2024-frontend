@@ -10,17 +10,17 @@ import dataJson from '@/utils/data/gynData.json';
 import CustomIconsLucid from '../CustomIconsLucid';
 
 interface Dica {
-  titulo: string;
-  icone: string;
-  descricao: string;
+  title: string;
+  icon: string;
+  description: string;
 }
 
 interface Day {
   icon: string;
-  data: string;
+  date: string;
   status: string;
-  duracao: string;
-  dicas: Dica[];
+  duration: string;
+  tips: Dica[];
 }
 
 interface CustomSliderProps {
@@ -31,13 +31,13 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ setFocusDay }) => {
   const [dayData, setDays] = useState<Day[]>([]);
 
   const handleSetDays = () => {
-    setDays(dataJson.dias);
+    setDays(dataJson.days);
   };
 
   const handleSlideChange = (index: number) => {
     const activeDay = dayData[index];
     if (activeDay) {
-      setFocusDay(activeDay.data);
+      setFocusDay(activeDay.date);
     }
   };
 
@@ -65,7 +65,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ setFocusDay }) => {
               className='flex items-center justify-center'>
               {({ isActive }) => (
                 <DayTag
-                  day={dayItem.data}
+                  day={dayItem.date}
                   icon={<CustomIconsLucid iconName={dayItem.icon} />}
                   activeFlag={isActive}
                 />

@@ -8,31 +8,31 @@ import dataJson from '@/utils/data/gynData.json';
 import { useTranslation } from 'react-i18next';
 import CustomIconsLucid from '@/components/CustomIconsLucid';
 
-interface Dica {
-  titulo: string;
-  icone: string;
-  descricao: string;
+interface Tips {
+  title: string;
+  icon: string;
+  description: string;
 }
 
-interface Dia {
+interface Day {
   icon: string;
-  data: string;
+  date: string;
   status: string;
-  duracao: string;
-  dicas: Dica[];
+  duration: string;
+  tips: Tips[];
 }
 
 interface AgriculturaPrevisao {
-  estado: string;
-  plantacao: string;
-  dias: Dia[];
+  state: string;
+  crop: string;
+  days: Day[];
 }
 
 const HomePage = () => {
   const { t } = useTranslation();
 
   const [data, setData] = useState<AgriculturaPrevisao | undefined>(undefined);
-  const [diaEspecifico, setDiaEspecifico] = useState<Dia | undefined>(
+  const [diaEspecifico, setDiaEspecifico] = useState<Day | undefined>(
     undefined
   );
   const [focusDay, setFocusDay] = useState<string>('');
@@ -47,8 +47,8 @@ const HomePage = () => {
 
   useEffect(() => {
     if (data) {
-      const dia = data.dias.find((dia) => dia.data === focusDay);
-      setDiaEspecifico(dia);
+      const day = data.days.find((day) => day.date === focusDay);
+      setDiaEspecifico(day);
     }
   }, [focusDay]);
 
@@ -64,8 +64,8 @@ const HomePage = () => {
         <img src={images.img_logo} alt={t('imagesAltText.orusLogo')} />
         <div className='flex w-full h-fit pl-[40px] py-[10px] bg-[#00000020] border-2 border-[#282828] rounded-full'>
           <div>
-            <p className='text-[20px] text-[#A5A5A5]'>{data?.estado}</p>
-            <p className='text-[24px] text-white'>{data?.plantacao}</p>
+            <p className='text-[20px] text-[#A5A5A5]'>{data?.state}</p>
+            <p className='text-[24px] text-white'>{data?.crop}</p>
           </div>
           <CustomButton label='' width='[62px]' bgColor='#282828' />
         </div>
@@ -78,23 +78,23 @@ const HomePage = () => {
           {diaEspecifico?.status}
         </p>
         <p className='text-[35px] text-white text-center font-light'>
-          {diaEspecifico?.duracao}
+          {diaEspecifico?.duration}
         </p>
       </div>
       <p className='text-white text-[36px] font-medium'>{t('')}</p>
 
       <div className='flex flex-col mt-[40px] gap-[16px] text-white'>
         {diaEspecifico ? (
-          diaEspecifico.dicas.map((dica) => (
+          diaEspecifico.tips.map((tips) => (
             <CustomCard
-              key={dica.titulo}
-              icon={<CustomIconsLucid iconName={dica.icone} color='#DCF730' />}
-              title={dica.titulo}
-              description={dica.descricao}
+              key={tips.title}
+              icon={<CustomIconsLucid iconName={tips.icon} color='#DCF730' />}
+              title={tips.title}
+              description={tips.description}
             />
           ))
         ) : (
-          <p>Nenhuma dica encontrada para o dia específico.</p>
+          <p>No tips for the day.</p>
         )}
       </div>
 
