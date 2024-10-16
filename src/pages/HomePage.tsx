@@ -54,7 +54,12 @@ const HomePage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       toast.success(
-        <div className='flex flex-col rounded-[25px] p-3 gap-3 bg-[#282828] border-2 border-[#333333]'>
+        <div className='relative flex flex-col rounded-[25px] p-3 gap-3 bg-[#282828] border-2 border-[#333333]'>
+          <button
+            className='absolute right-4 top-4'
+            onClick={() => toast.dismiss()}>
+            <CustomIconsLucid iconName='X' color='#DCF730' />
+          </button>
           <p className='text-[20px] text-center text-white font-semibold'>
             This is a Demo Aplication
           </p>
@@ -68,7 +73,10 @@ const HomePage = () => {
             Try Orus IA now!
           </button>
         </div>,
-        { duration: 7000, unstyled: true }
+        {
+          duration: 7000,
+          unstyled: true,
+        }
       );
     }, 2000); // Espera 2 segundos antes de exibir o toaster
 
