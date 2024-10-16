@@ -2,7 +2,6 @@ import CustomButton from '@/components/CustomButton';
 import CustomCard from '@/components/CustomCard';
 import CustomSlider from '@/components/CustomSlider/CustomSlider';
 import { useEffect, useState } from 'react';
-
 import { images } from '@/assets/utils/getImgs';
 import dataJson from '@/utils/data/gynData.json';
 import { useTranslation } from 'react-i18next';
@@ -60,16 +59,15 @@ const HomePage = () => {
             <CustomIconsLucid iconName='X' color='#DCF730' />
           </button>
           <p className='text-[20px] text-center text-white font-semibold'>
-            This is a Demo Aplication
+            {t('toastMensage.title')}
           </p>
           <p className='text-[18px] text-center text-white'>
-            This aplication is a demo to showcase our moder interface, to make
-            real requests for our IA model please click on the button try it now
+            {t('toastMensage.text')}
           </p>
           <button
             onClick={handleRedirect}
-            className='p-3 rounded-[15px] text-[18px] text-[#282828] font-normal shadow-[0_0_15px_5px_rgba(220,247,48,0.5)] hover:shadow-[0_0_25px_10px_rgba(220,247,48,0.8)] overflow-hidden bg-gradient-to-r from-[#DCF730] via-[#b8e600] to-[#DCF730]'>
-            Try Orus IA now!
+            className='p-3 rounded-[15px] text-[18px] text-[#282828] font-normal shadow-[0_0_15px_5px_rgba(220,247,48,0.5)] hover:shadow-[0_0_25px_10px_rgba(220,247,48,0.8)] bg-gradient-to-r from-[#DCF730] via-[#b8e600] to-[#DCF730]'>
+            {t('toastMensage.button')}
           </button>
         </div>,
         {
@@ -152,7 +150,7 @@ const HomePage = () => {
             </div>
             <div>
               <p className='text-[14px] font-light text-lime-300'>Sugestão</p>
-              <p className='text-[18px]'>Orus IA</p>
+              <p className='text-[18px]'>{t('brand.nameAlt')}</p>
             </div>
           </div>
           <div className='flex flex-col gap-2 text-[#A5A5A5]'>

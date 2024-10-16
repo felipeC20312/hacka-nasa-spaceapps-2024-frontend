@@ -1,11 +1,10 @@
-import { BrowserRouter } from 'react-router-dom';
-import './App.css';
 import DeviceVerifier from './components/DeviceVerifier/DeviceVerifier';
-import RoutesApp from './RoutesApp';
+import { BrowserRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
-import i18n from './lang/i18n';
-
+import RoutesApp from './RoutesApp';
 import { Toaster } from 'sonner';
+import i18n from './lang/i18n';
+import './App.css';
 
 function App() {
   return (
