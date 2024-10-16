@@ -8,7 +8,6 @@ import dataJson from '@/utils/data/gynData.json';
 import { useTranslation } from 'react-i18next';
 import CustomIconsLucid from '@/components/CustomIconsLucid';
 import { toast } from 'sonner';
-import { useNavigate } from 'react-router-dom';
 
 interface Tips {
   title: string;
@@ -74,7 +73,7 @@ const HomePage = () => {
           </button>
         </div>,
         {
-          duration: 7000,
+          duration: 5000,
           unstyled: true,
         }
       );
