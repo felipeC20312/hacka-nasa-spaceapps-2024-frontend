@@ -18,16 +18,15 @@
       "title": "Ready to smart farming?",
       "subtitle": "Set your data crop:",
       "textInputs": {
-        "country": {
-          "title": "Country",
-          "subtitle": "Input a Country"
+        "map": {
+          "title": "Select a Location"
         },
         "state": {
-          "title": "State",
-          "subtitle": "Input a State"
+          "title": "Terrain Size",
+          "subtitle": "Select the terrain size area"
         },
         "crops": {
-          "title": "Agricultural Crops",
+          "title": "Crops",
           "subtitle": "Select the crops you work with"
         }
       }
