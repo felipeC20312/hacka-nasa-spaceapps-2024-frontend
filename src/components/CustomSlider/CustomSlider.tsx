@@ -4,9 +4,8 @@ import DayTag from '../DayTag';
 
 import 'swiper/css';
 import './CustomSlider.css';
-import React, { useEffect, useState } from 'react';
+import React, { SetStateAction, useEffect, useState } from 'react';
 
-import dataJson from '@/utils/data/gynData.json';
 import CustomIconsLucid from '../CustomIconsLucid';
 
 interface Dica {
@@ -25,13 +24,16 @@ interface Day {
 
 interface CustomSliderProps {
   setFocusDay: React.Dispatch<React.SetStateAction<string>>;
+  data: SetStateAction<Day[]> | Day[] | undefined;
 }
 
-const CustomSlider: React.FC<CustomSliderProps> = ({ setFocusDay }) => {
+const CustomSlider: React.FC<CustomSliderProps> = ({ setFocusDay, data }) => {
   const [dayData, setDays] = useState<Day[]>([]);
 
   const handleSetDays = () => {
-    setDays(dataJson.days);
+    if (data) {
+      setDays(data);
+    }
   };
 
   const handleSlideChange = (index: number) => {

@@ -25,7 +25,7 @@ export default function ({ iconName, size, color }: DynamicIconProps) {
   const DynamicIcon = Lucide[toPascalCase(iconName)];
 
   if (!DynamicIcon) {
-    throw new Error(`Icon '${iconName}' not found`);
+    return <Lucide.CloudDrizzle size={size ?? 24} color={color} />;
   }
 
   return <DynamicIcon size={size ?? 24} color={color} />;

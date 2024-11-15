@@ -3,13 +3,14 @@ import CustomCard from '@/components/CustomCard';
 import CustomSlider from '@/components/CustomSlider/CustomSlider';
 import { useEffect, useState } from 'react';
 import { images } from '@/assets/utils/getImgs';
-// import dataJson from '@/utils/data/gynData.json';
+import dataJson from '@/utils/data/gynData.json';
 import { useTranslation } from 'react-i18next';
 import CustomIconsLucid, { toPascalCase } from '@/components/CustomIconsLucid';
 import { toast } from 'sonner';
 import { api } from '@/core/api';
 import { formatDateRange } from '@/utils/functions';
 import { helix } from 'ldrs';
+import { Button } from '@/components/ui/button';
 
 helix.register();
 
@@ -51,14 +52,7 @@ const HomePage = () => {
   const getData = async () => {
     setLoading(true);
     try {
-      const formRequest = {
-        crop: ['corn', 'Soybean'],
-        location: {
-          latitude: -16.686072,
-          longitude: -49.262533,
-        },
-        size: '1 a 3 hectars',
-      };
+      const formRequest = localStorage.getItem('formData');
       const response = await api.post(
         '/process_agricultural_forecasting',
         formRequest
@@ -79,34 +73,35 @@ const HomePage = () => {
     );
   };
 
+  const callInfoToast = () => {
+    toast.success(
+      <div className='relative flex flex-col rounded-[25px] p-3 gap-3 bg-[#282828] border-2 border-[#333333]'>
+        <button
+          className='absolute right-4 top-4'
+          onClick={() => toast.dismiss()}>
+          <CustomIconsLucid iconName='X' color='#DCF730' />
+        </button>
+        <p className='text-[20px] text-center text-white font-semibold'>
+          {t('toastMensage.title')}
+        </p>
+        <p className='text-[18px] text-center text-white'>
+          {t('toastMensage.text')}
+        </p>
+        <button
+          onClick={handleRedirect}
+          className='p-3 rounded-[15px] text-[18px] text-[#282828] font-normal shadow-[0_0_15px_5px_rgba(220,247,48,0.5)] hover:shadow-[0_0_25px_10px_rgba(220,247,48,0.8)] bg-gradient-to-r from-[#DCF730] via-[#b8e600] to-[#DCF730]'>
+          {t('toastMensage.button')}
+        </button>
+      </div>,
+      {
+        unstyled: true,
+        duration: Infinity, // Toast permanecerá até que o usuário interaja
+      }
+    );
+  };
+
   useEffect(() => {
-    const timer = setTimeout(() => {
-      toast.success(
-        <div className='relative flex flex-col rounded-[25px] p-3 gap-3 bg-[#282828] border-2 border-[#333333]'>
-          <button
-            className='absolute right-4 top-4'
-            onClick={() => toast.dismiss()}>
-            <CustomIconsLucid iconName='X' color='#DCF730' />
-          </button>
-          <p className='text-[20px] text-center text-white font-semibold'>
-            {t('toastMensage.title')}
-          </p>
-          <p className='text-[18px] text-center text-white'>
-            {t('toastMensage.text')}
-          </p>
-          <button
-            onClick={handleRedirect}
-            className='p-3 rounded-[15px] text-[18px] text-[#282828] font-normal shadow-[0_0_15px_5px_rgba(220,247,48,0.5)] hover:shadow-[0_0_25px_10px_rgba(220,247,48,0.8)] bg-gradient-to-r from-[#DCF730] via-[#b8e600] to-[#DCF730]'>
-            {t('toastMensage.button')}
-          </button>
-        </div>,
-        {
-          duration: 5000,
-          unstyled: true,
-        }
-      );
-    }, 2000);
-    return () => clearTimeout(timer);
+    callInfoToast();
   }, []);
 
   useEffect(() => {
@@ -142,17 +137,29 @@ const HomePage = () => {
           <div className='flex w-full z-[1] box-border gap-3 mt-[30px]'>
             <img src={images.img_logo} alt={t('imagesAltText.orusLogo')} />
             <div className='flex w-full h-fit pl-[40px] py-[10px] bg-[#00000020] border-2 border-[#282828] rounded-full'>
-              <div>
-                <p className='text-[20px] text-[#A5A5A5]'>Orus AI</p>
-                <p className='text-[24px] text-white'>
-                  {toPascalCase(data?.plantation)}
-                </p>
+              <div className='flex w-full justify-between pr-3'>
+                <div>
+                  <p className='text-[20px] text-[#A5A5A5]'>Orus AI</p>
+                  <p className='text-[24px] text-white'>
+                    {/* {toPascalCase(data?.plantation)} */}
+                    Insigths
+                  </p>
+                </div>
+                <div className='flex w-[70px] h-[70px] shrink-0 items-center justify-center rounded-full bg-[#242424] border-2 border-[#333333]'>
+                  <button onClick={() => callInfoToast()}>
+                    <CustomIconsLucid
+                      iconName='Info'
+                      size={24}
+                      color={'#DCF730'}
+                    />
+                  </button>
+                </div>
               </div>
               <CustomButton label='' width='[62px]' bgColor='#282828' />
             </div>
           </div>
           <div className='flex w-full h-fit mt-[170px] text-white'>
-            <CustomSlider setFocusDay={setFocusDay} />
+            <CustomSlider setFocusDay={setFocusDay} data={data?.days} />
           </div>
           <div className='flex flex-col'>
             <p className='mt-[24px] text-[#A5A5A5] text-[24px] text-center font-normal'>

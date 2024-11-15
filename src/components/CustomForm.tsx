@@ -27,7 +27,7 @@ import {
 } from '@vis.gl/react-google-maps';
 
 const formSchema = z.object({
-  props: z
+  crop: z
     .string()
     .min(1, { message: 'Property is required' })
     .nonempty({ message: 'Property is required' }),
@@ -45,7 +45,7 @@ const CustomForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      props: '',
+      crop: '',
       size: '',
       location: {
         latitude: 0,
@@ -88,7 +88,7 @@ const CustomForm = () => {
         {/* Crops Selection */}
         <FormField
           control={form.control}
-          name='props'
+          name='crop'
           render={({ field }) => {
             return (
               <FormItem>
