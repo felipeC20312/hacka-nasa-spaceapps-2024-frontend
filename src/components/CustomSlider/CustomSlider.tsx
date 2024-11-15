@@ -17,10 +17,10 @@ interface Dica {
 
 interface Day {
   icon: string;
-  date: string;
+  data: string;
   status: string;
-  duration: string;
-  tips: Dica[];
+  duracao: string;
+  dicks: Dica[];
 }
 
 interface CustomSliderProps {
@@ -37,7 +37,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ setFocusDay }) => {
   const handleSlideChange = (index: number) => {
     const activeDay = dayData[index];
     if (activeDay) {
-      setFocusDay(activeDay.date);
+      setFocusDay(activeDay.data);
     }
   };
 
@@ -65,7 +65,7 @@ const CustomSlider: React.FC<CustomSliderProps> = ({ setFocusDay }) => {
               className='flex items-center justify-center'>
               {({ isActive }) => (
                 <DayTag
-                  day={dayItem.date}
+                  day={dayItem.data}
                   icon={<CustomIconsLucid iconName={dayItem.icon} />}
                   activeFlag={isActive}
                 />

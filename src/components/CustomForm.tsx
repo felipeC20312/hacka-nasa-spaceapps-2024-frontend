@@ -136,11 +136,14 @@ const CustomForm = () => {
                       <SelectItem value='1 to 3hectares'>
                         1 to 3 hectares
                       </SelectItem>
-                      <SelectItem value='5 to 7 hectares'>
-                        5 to 7 hectares
+                      <SelectItem value='4 to 7 hectares'>
+                        4 to 7 hectares
                       </SelectItem>
-                      <SelectItem value='more than 9 hecares'>
-                        more than 9 hectares
+                      <SelectItem value='7 to 10 hectares'>
+                        7 to 10 hectares
+                      </SelectItem>
+                      <SelectItem value='more than 10 hecares'>
+                        more than 10 hectares
                       </SelectItem>
                     </SelectContent>
                   </Select>
