@@ -6,6 +6,7 @@ import 'swiper/css';
 import './CustomSlider.css';
 import React, { SetStateAction, useEffect, useState } from 'react';
 
+import dataJson from '@/utils/data/gynData.json';
 import CustomIconsLucid from '../CustomIconsLucid';
 
 interface Dica {
@@ -30,10 +31,14 @@ interface CustomSliderProps {
 const CustomSlider: React.FC<CustomSliderProps> = ({ setFocusDay, data }) => {
   const [dayData, setDays] = useState<Day[]>([]);
 
+  // const handleSetDays = () => {
+  //   if (data) {
+  //     setDays(data);
+  //   }
+  // };
+
   const handleSetDays = () => {
-    if (data) {
-      setDays(data);
-    }
+    setDays(dataJson.days);
   };
 
   const handleSlideChange = (index: number) => {

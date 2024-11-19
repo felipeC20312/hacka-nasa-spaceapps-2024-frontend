@@ -1,16 +1,16 @@
-import CustomButton from '@/components/CustomButton';
-import CustomCard from '@/components/CustomCard';
-import CustomSlider from '@/components/CustomSlider/CustomSlider';
-import { useEffect, useState } from 'react';
-import { images } from '@/assets/utils/getImgs';
-import dataJson from '@/utils/data/gynData.json';
-import { useTranslation } from 'react-i18next';
-import CustomIconsLucid, { toPascalCase } from '@/components/CustomIconsLucid';
+import { helix } from 'ldrs';
 import { toast } from 'sonner';
 import { api } from '@/core/api';
-import { formatDateRange } from '@/utils/functions';
-import { helix } from 'ldrs';
+import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { images } from '@/assets/utils/getImgs';
 import { Button } from '@/components/ui/button';
+import CustomCard from '@/components/CustomCard';
+import dataJson from '@/utils/data/gynData.json';
+import { formatDateRange } from '@/utils/functions';
+import CustomButton from '@/components/CustomButton';
+import CustomSlider from '@/components/CustomSlider/CustomSlider';
+import CustomIconsLucid, { toPascalCase } from '@/components/CustomIconsLucid';
 
 helix.register();
 
@@ -43,27 +43,27 @@ const HomePage = () => {
   );
   const [focusDay, setFocusDay] = useState<string>('');
 
-  // const getData = () => {
-  //   setData(dataJson);
-  // };
+  const getData = () => {
+    setData(dataJson);
+  };
 
   const [loading, setLoading] = useState<boolean>(false); // Estado para controle de carregamento
 
-  const getData = async () => {
-    setLoading(true);
-    try {
-      const formRequest = localStorage.getItem('formData');
-      const response = await api.post(
-        '/process_agricultural_forecasting',
-        formRequest
-      );
-      setData(response.data);
-    } catch (error) {
-      console.log('ERROR:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const getData = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const formRequest = localStorage.getItem('formData');
+  //     const response = await api.post(
+  //       '/process_agricultural_forecasting',
+  //       formRequest
+  //     );
+  //     setData(response.data);
+  //   } catch (error) {
+  //     console.log('ERROR:', error);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   const handleRedirect = () => {
     window.open(
@@ -166,7 +166,8 @@ const HomePage = () => {
               {diaEspecifico?.status}
             </p>
             <p className='text-[35px] text-white text-center font-light'>
-              {formatDateRange(diaEspecifico?.duracao)}
+              {/* {formatDateRange(diaEspecifico?.duracao)} */}
+              {diaEspecifico?.duracao}
             </p>
           </div>
           <p className='text-white text-[36px] font-medium'>{t('')}</p>

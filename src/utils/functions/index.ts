@@ -1,4 +1,5 @@
 export function formatDateRange(dateRange: string | undefined): string {
+  debugger;
   const monthsAbbreviations: { [key: number]: string } = {
     1: 'jan.',
     2: 'fev.',
